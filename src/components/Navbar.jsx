@@ -106,7 +106,7 @@ const Navbar = (props) => {
 
       <BigLogo>
         <Link to="/" onClick={handleClose}>
-          <img src="./Logo.svg" />
+          <img src="/Logo.svg" />
         </Link>
       </BigLogo>
     </div>

@@ -1,6 +1,9 @@
 * a {
   text-decoration: none;
 }
+* {
+  box-sizing: border-box;
+}
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {

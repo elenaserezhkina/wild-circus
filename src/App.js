@@ -8,6 +8,7 @@ import Food from "./pages/Food";
 import Location from "./pages/Location";
 import Tickets from "./pages/Tickets";
 import Shows from "./pages/Shows";
+import ShowDescription from "./pages/ShowDescription";
 
 function App() {
   return (
@@ -29,9 +30,10 @@ function App() {
         <Route path="/tickets">
           <Tickets />
         </Route>
-        <Route path="/shows">
+        <Route exact path="/shows">
           <Shows />
         </Route>
+        <Route path="/shows/:id" component={ShowDescription}></Route>
       </Switch>
     </Router>
   );
