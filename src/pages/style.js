@@ -2,8 +2,8 @@ import styled from "styled-components";
 import Color from "../utils/Colors.js";
 
 export const Header = styled.div`
-  margin: 50px;
-  color: ${Color.mainGreen};
+  margin-top: 50px;
+  color: ${Color.mainDark};
   @media only screen and (min-width: 520px) {
     transition: all 0.3s linear;
     font-size: 50px;

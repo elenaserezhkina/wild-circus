@@ -13,7 +13,8 @@ const Footer = (props) => {
         {" "}
         www.flaticon.com
       </a>
-      Photo by Becky Phan on Unsplash
+      Photo by Becky Phan on Unsplash, Photo by Cyrus Crossan on Unsplash, Photo
+      by Conor Samuel on Unsplash
     </div>
   );
 };
