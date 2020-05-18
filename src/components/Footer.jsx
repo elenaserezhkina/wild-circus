@@ -1,9 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
+import styled from "styled-components";
+import Color from "../utils/Colors";
+
+const Container = styled.div`
+  width: 100%;
+  height: 100px;
+  background-color: ${Color.mainDark};
+  color: ${Color.mainWhite};
+  a {
+    color: ${Color.mainYellow};
+  }
+`;
 
 const Footer = (props) => {
   return (
-    <div>
+    <Container>
       Icons made by{" "}
       <a href="https://www.flaticon.com/authors/freepik" title="Freepik">
         Freepik
@@ -13,9 +25,9 @@ const Footer = (props) => {
         {" "}
         www.flaticon.com
       </a>
-      Photo by Becky Phan on Unsplash, Photo by Cyrus Crossan on Unsplash, Photo
-      by Conor Samuel on Unsplash
-    </div>
+      <br />
+      Photos by: Becky Phan, Cyrus Crossan, Conor Samuel, emy on Unsplash
+    </Container>
   );
 };
 

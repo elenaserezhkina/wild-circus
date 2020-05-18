@@ -1,13 +1,21 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Header } from "./style";
+import { Header, SmallHeader } from "./style";
 import CarouselBig from "../components/CarouselBig";
+import FoodPrev from "../components/mainPreviews/FoodPrev";
+import ReviewPrev from "../components/mainPreviews/ReviewPrev";
+import Footer from "../components/Footer";
 
 const Main = (props) => {
   return (
     <div>
       <Header>Welcome to the Wild Circus </Header>
       <CarouselBig />
+      <SmallHeader>Gastronomy</SmallHeader>
+      <FoodPrev />
+      <SmallHeader>Reviews</SmallHeader>
+      <ReviewPrev />
+      <Footer />
     </div>
   );
 };

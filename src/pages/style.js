@@ -14,6 +14,23 @@ export const Header = styled.div`
   }
   @media only screen and (min-width: 310px) and (max-width: 370px) {
     transition: all 0.3s linear;
+    font-size: 35px;
+  }
+`;
+
+export const SmallHeader = styled.div`
+  margin-top: 10px;
+  color: ${Color.mainDark};
+  @media only screen and (min-width: 520px) {
+    transition: all 0.3s linear;
+    font-size: 40px;
+  }
+  @media only screen and (min-width: 370px) and (max-width: 520px) {
+    transition: all 0.3s linear;
+    font-size: 35px;
+  }
+  @media only screen and (min-width: 310px) and (max-width: 370px) {
+    transition: all 0.3s linear;
     font-size: 30px;
   }
 `;
