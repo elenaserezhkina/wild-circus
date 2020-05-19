@@ -9,6 +9,7 @@ import Location from "./pages/Location";
 import Tickets from "./pages/Tickets";
 import Shows from "./pages/Shows";
 import ShowDescription from "./pages/ShowDescription";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -35,6 +36,7 @@ function App() {
         </Route>
         <Route path="/shows/:id" component={ShowDescription}></Route>
       </Switch>
+      <Footer />
     </Router>
   );
 }

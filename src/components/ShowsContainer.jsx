@@ -10,7 +10,7 @@ const Container = styled.div`
   justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  div {
+  > div {
     display: flex;
     flex-direction: column;
     justify-content: center;

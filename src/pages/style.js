@@ -36,3 +36,45 @@ export const SmallHeader = styled.div`
     font-size: 30px;
   }
 `;
+
+export const Form = styled.div`
+  width: 80%;
+  padding: 10px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  max-width: 400px;
+  min-width: 250px;
+  background-color: ${Color.mainYellow};
+  color: ${Color.mainDark};
+  min-height: 200px;
+  border-radius: 5px;
+`;
+export const Button = styled.button`
+  cursor: pointer;
+  font-family: sans-serif;
+  text-align: center;
+  text-decoration: none;
+  border: none;
+
+  &:focus {
+    outline: none;
+  }
+`;
+
+export const ButtonsContainer = styled.div`
+  margin: 5px 10px;
+  justify-content: space-between;
+  display: flex;
+`;
+export const NavigationButton = styled(Button)`
+  background: ${Color.mainDark};
+  color: ${Color.mainWhite};
+  font-size: 0.9em;
+  padding: 0.7em 0.7em;
+  border-radius: 25px;
+  @media (max-width: 800px) {
+    font-size: 0.7em;
+    padding: 0.5em 0.5em;
+  }
+`;
