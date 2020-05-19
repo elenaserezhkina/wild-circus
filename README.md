@@ -1,3 +1,6 @@
+## Frontend https://wild-circus-frontend.netlify.app/
+## Backend https://github.com/elenaserezhkina/wild-circus-backend and https://wild-circus-backend.herokuapp.com/
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts
