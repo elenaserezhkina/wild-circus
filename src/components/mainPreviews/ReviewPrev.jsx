@@ -30,24 +30,24 @@ const Card = styled(_Card)`
     color: ${Color.mainDark};
   }
 `;
-const reviews = [1, 2, 3];
 
 const ReviewPrev = (props) => {
   return (
     <Container>
       <Card>
-        {reviews.map(() => (
-          <CardActionArea>
-            <CardContent>
-              <Typography gutterBottom variant="h5" component="h2">
-                Mia
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p">
-                The show was amazing! I would definitely recommend
-              </Typography>
-            </CardContent>
-          </CardActionArea>
-        ))}
+        {props.reviews &&
+          props.reviews.map((review) => (
+            <CardActionArea>
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="h2">
+                  {review.name}
+                </Typography>
+                <Typography variant="body2" color="textSecondary" component="p">
+                  {review.text}
+                </Typography>
+              </CardContent>
+            </CardActionArea>
+          ))}
       </Card>
     </Container>
   );
