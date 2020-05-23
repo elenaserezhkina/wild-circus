@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import styled from "styled-components";
 import Color from "../utils/Colors.js";
 import { Header, SmallHeader } from "./style";
+import ReviewPrev from "../components/mainPreviews/ReviewPrev.jsx";
 
 const Container = styled.div`
   margin: 0 auto;
@@ -50,6 +51,7 @@ const SectionContainer = styled.div`
 
 const ShowDescription = (props) => {
   const [show, setShow] = useState();
+  const [reviews, setReviews] = useState();
   const showId = props.match.params.id;
   // useEffect(() => {
   //   const selectedShow = showsArray.filter((show) => show.id === +showId);
@@ -62,6 +64,7 @@ const ShowDescription = (props) => {
       .then((res) => res.json())
       .then((res) => {
         setShow(res.result);
+        setReviews(res.result.reviews.slice(-3));
       })
       .catch((error) => {
         console.log("Error: ", error);
@@ -81,6 +84,7 @@ const ShowDescription = (props) => {
       )}
       <SmallHeader>Our Artists</SmallHeader>
       <SmallHeader>Latest Reviews</SmallHeader>
+      <ReviewPrev reviews={reviews} />
     </Container>
   );
 };
