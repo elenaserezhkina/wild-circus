@@ -4,8 +4,13 @@ import {
   Header,
   SmallHeader,
   Form,
+  BigForm,
   ButtonsContainer,
   NavigationButton,
+  AllReviews,
+  UserReview,
+  XsHeader,
+  AddBorder,
 } from "./style";
 import styled from "styled-components";
 import Color from "../utils/Colors";
@@ -138,28 +143,32 @@ const Review = (props) => {
         </ButtonsContainer>
       </Form>
       <SmallHeader>All reviews</SmallHeader>
-      {submittedReview && (
-        <div>
-          Your review was submitted
-          <br /> {submittedReview.text}
-        </div>
-      )}
-      <div>
-        {shows.length &&
-          shows.map((show) => (
-            <div>
-              <p>Reviews for {show.title}</p>
-              <div>
-                {show.reviews.map((rev) => (
-                  <div>
-                    <p>From {rev.name}</p>
-                    <p>{rev.text}</p>
-                  </div>
-                ))}
-              </div>
-            </div>
-          ))}
-      </div>
+      <BigForm>
+        <UserReview>
+          {submittedReview && (
+            <>
+              <XsHeader>Your review was submitted</XsHeader>
+              <AddBorder> {submittedReview.text}</AddBorder>
+            </>
+          )}
+        </UserReview>
+        <AllReviews>
+          {shows.length &&
+            shows.map((show) => (
+              <>
+                <XsHeader>Reviews for {show.title}</XsHeader>
+                <>
+                  {show.reviews.map((rev) => (
+                    <AddBorder>
+                      <p>From {rev.name}</p>
+                      <p>{rev.text}</p>
+                    </AddBorder>
+                  ))}
+                </>
+              </>
+            ))}
+        </AllReviews>
+      </BigForm>
     </div>
   );
 };
