@@ -25,31 +25,22 @@ const Container = styled.div`
     margin: 10px;
   }
 `;
-const showsArray = [
-  { id: 1, description: "Show number 1", img: "/circus-1.jpg" },
-  {
-    id: 2,
-    description: "Second Show with a long description",
-    img: "/circus-2.jpg",
-  },
-  { id: 3, description: "here we go", img: "/circus-3.jpg" },
-  { id: 4, description: "show number 4", img: "/circus-1.jpg" },
-];
 
 const ShowsContainer = (props) => {
   return (
     <Container>
-      {showsArray.map((show) => (
-        <Link
-          to={`/shows/${show.id}`}
-          //   style={{ textDecoration: "none" }}
-        >
-          <div>
-            <h4>{show.description}</h4>
-            <img src={show.img} />
-          </div>
-        </Link>
-      ))}
+      {props.shows &&
+        props.shows.map((show) => (
+          <Link
+            to={`/shows/${show._id}`}
+            //   style={{ textDecoration: "none" }}
+          >
+            <div>
+              <h4>{show.title}</h4>
+              <img src={show.image} />
+            </div>
+          </Link>
+        ))}
     </Container>
   );
 };

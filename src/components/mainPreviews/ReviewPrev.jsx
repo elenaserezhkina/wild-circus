@@ -12,8 +12,8 @@ import { ButtonsContainer, NavigationButton } from "../../pages/style";
 
 const Container = styled.div`
   margin: 0 auto;
-  width: 60%;
-  max-width: 500px;
+  width: 70%;
+  max-width: 650px;
   display: flex;
   justify-content: center;
   flex-wrap: wrap;

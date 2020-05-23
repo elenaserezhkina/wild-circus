@@ -37,39 +37,45 @@ const SectionContainer = styled.div`
   }
 `;
 
-const showsArray = [
-  { id: 1, title: "Show number 1", img: "/circus-1.jpg" },
-  {
-    id: 2,
-    title: "Second Show with a long title",
-    img: "/circus-2.jpg",
-  },
-  { id: 3, title: "here we go", img: "/circus-3.jpg" },
-  { id: 4, title: "show number 4", img: "/circus-1.jpg" },
-];
+// const showsArray = [
+//   { id: 1, title: "Show number 1", img: "/circus-1.jpg" },
+//   {
+//     id: 2,
+//     title: "Second Show with a long title",
+//     img: "/circus-2.jpg",
+//   },
+//   { id: 3, title: "here we go", img: "/circus-3.jpg" },
+//   { id: 4, title: "show number 4", img: "/circus-1.jpg" },
+// ];
 
 const ShowDescription = (props) => {
-  const [show, setShow] = useState("");
+  const [show, setShow] = useState();
   const showId = props.match.params.id;
+  // useEffect(() => {
+  //   const selectedShow = showsArray.filter((show) => show.id === +showId);
+  //   setShow(selectedShow[0]);
+  // }, [showId]);
+  // show && console.log(show);
+
   useEffect(() => {
-    console.log("here is", showId);
-    const selectedShow = showsArray.filter((show) => show.id === +showId);
-    setShow(selectedShow[0]);
-  }, [showId]);
-  show && console.log(show);
+    fetch(`https://wild-circus-backend.herokuapp.com/shows/${showId}`)
+      .then((res) => res.json())
+      .then((res) => {
+        setShow(res.result);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  }, []);
+
   return (
     <Container>
       {show && (
         <>
           <Header>{show.title}</Header>
           <SectionContainer>
-            <img src={show.img} />
-            <Description>
-              {" "}
-              Here is a description Here is a description Here is a description
-              Here is a description Here is a description Here is a
-              descriptionHere is a descriptionHere is a description
-            </Description>
+            <img src={show.image} />
+            <Description>{show.description}</Description>
           </SectionContainer>
         </>
       )}
