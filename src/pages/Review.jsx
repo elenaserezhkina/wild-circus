@@ -1,6 +1,12 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { Header, Form, ButtonsContainer, NavigationButton } from "./style";
+import {
+  Header,
+  SmallHeader,
+  Form,
+  ButtonsContainer,
+  NavigationButton,
+} from "./style";
 import styled from "styled-components";
 import Color from "../utils/Colors";
 import {
@@ -14,6 +20,8 @@ import {
 const Review = (props) => {
   const [value, setValue] = React.useState("");
   const [age, setAge] = React.useState("");
+  const [shows, setShows] = React.useState([]);
+  console.log(shows);
 
   const handleChange = (event) => {
     setAge(event.target.value);
@@ -21,6 +29,21 @@ const Review = (props) => {
   const handleAgeChange = (event) => {
     setValue(event.target.value);
   };
+
+  //
+
+  React.useEffect(() => {
+    fetch("https://wild-circus-backend.herokuapp.com/shows")
+      .then((res) => res.json())
+      .then((res) => {
+        console.log(res.result);
+        setShows(res.result);
+      })
+      .catch((error) => {
+        console.log("Error: ", error);
+      });
+  }, []);
+
   return (
     <div>
       <Header>Your review is important!</Header>
@@ -48,6 +71,23 @@ const Review = (props) => {
           <NavigationButton>Submit review</NavigationButton>
         </ButtonsContainer>
       </Form>
+      <SmallHeader>All reviews</SmallHeader>
+      <div>
+        {shows.length &&
+          shows.map((show) => (
+            <div>
+              <p>Reviews for {show.description}</p>
+              <div>
+                {show.reviews.map((rev) => (
+                  <div>
+                    <p>From {rev.name}</p>
+                    <p>{rev.text}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+      </div>
     </div>
   );
 };
