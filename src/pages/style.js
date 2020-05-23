@@ -36,6 +36,19 @@ export const SmallHeader = styled.div`
     font-size: 30px;
   }
 `;
+export const XsHeader = styled.div`
+  margin-top: 3px;
+  text-align: center;
+  color: ${Color.mainDark};
+  @media only screen and (min-width: 520px) {
+    transition: all 0.3s linear;
+    font-size: 20px;
+  }
+  @media only screen and (min-width: 310px) and (max-width: 520px) {
+    transition: all 0.3s linear;
+    font-size: 18px;
+  }
+`;
 
 export const Form = styled.div`
   width: 80%;
@@ -50,6 +63,16 @@ export const Form = styled.div`
   min-height: 200px;
   border-radius: 5px;
 `;
+
+export const BigForm = styled(Form)`
+  padding: 5px;
+  max-width: 700px;
+  background-color: ${Color.mainWhite};
+  color: ${Color.mainDark};
+  min-height: 200px;
+  border-radius: 5px;
+`;
+
 export const Button = styled.button`
   cursor: pointer;
   font-family: sans-serif;
@@ -77,4 +100,10 @@ export const NavigationButton = styled(Button)`
     font-size: 0.7em;
     padding: 0.5em 0.5em;
   }
+`;
+
+export const UserReview = styled.div``;
+export const AllReviews = styled.div``;
+export const AddBorder = styled.div`
+  border: 0.5px solid;
 `;

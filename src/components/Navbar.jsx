@@ -80,7 +80,7 @@ const Navbar = (props) => {
                 Shows
               </Link>
             </MenuItem>
-            <MenuItem onClick={handleClose}>
+            {/* <MenuItem onClick={handleClose}>
               <Link to="/tickets" onClick={handleClose}>
                 Tickets
               </Link>
@@ -94,7 +94,7 @@ const Navbar = (props) => {
               <Link to="/location" onClick={handleClose}>
                 Location
               </Link>
-            </MenuItem>
+            </MenuItem> */}
             <MenuItem onClick={handleClose}>
               <Link to="/review" onClick={handleClose}>
                 Review
